@@ -11,8 +11,8 @@ public class PassByExperiment {
         System.out.println("Before passing an object " + date); passObject(date);
         System.out.println("After passing an object " + date);
 
-        System.out.println("Before passing a primitive " + date.year); passPrimitive(date.year);
-        System.out.println("After passing a primitive " + date.year);
+     //   System.out.println("Before passing a primitive " + date.year); passPrimitive(date.year);
+     //   System.out.println("After passing a primitive " + date.year);
 
         String x = date.toString();
         System.out.println("Before passing a String " + x);
@@ -29,7 +29,7 @@ public class PassByExperiment {
 
 
     public static void passObject(MyDate d){
-        d.year=2009;
+       // d.year=2009;
     }
 
     public static void passPrimitive(int i){
