@@ -1,5 +1,7 @@
 package AcmeOrderSystem.com.acme.utils;
 
+import java.util.Objects;
+
 public class MyDate {
     private int day;
     private int month;
@@ -82,5 +84,18 @@ public class MyDate {
             return day <= 28 || (day == 29 && year % 4 == 0);
         }
         return true;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MyDate myDate = (MyDate) o;
+        return day == myDate.day && month == myDate.month && year == myDate.year;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(day, month, year);
     }
 }
