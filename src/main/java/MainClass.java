@@ -43,6 +43,78 @@ public class MainClass {
 
     }
 
+    package com.codility.tasks.invert;
+
+import com.codility.tasks.invert.Inverter;
+import org.junit.Assert;
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+    public class InverterTest {
+
+        @Test public void shouldInvert() {
+            //Given
+            String expected = "elppa";
+            //When
+            String inverted = Inverter.invert("apple");
+            //Then
+            Assert.assertEquals(expected , inverted);
+
+
+        }
+
+        @Test public void shouldInvertCheckNotCorrect() {
+            //Given
+            String expected = "test";
+            //When
+            String inverted = Inverter.invert("test");
+            //Then
+            Assert.assertNotEquals(expected , inverted);
+        }
+
+
+        @Test public void shouldInvertCheckEmpty() {
+            //Given
+            String expected = "";
+            //When
+            String inverted = Inverter.invert("");
+            //Then
+            Assert.assertEquals(expected , inverted);
+        }
+
+        @Test public void shouldInvertCapitalLetter() {
+            // Given
+            String input = "Negentropy";
+            String expected = "yportnegeN";
+            // when
+            String actual = Inverter.invert(input);
+            // then
+            Assert.assertEquals(expected, actual);
+        }
+        @Test public void shouldInvertOneCharacter() {
+            // Given
+            String input = "C";
+            String expected = "C";
+            // when
+            String actual = Inverter.invert(input);
+            // then
+            Assert.assertEquals(expected, actual);
+        }
+
+//  @Test public void shouldInvertNull() {
+//      // Given
+//      String input ;
+//      String expected ;
+//  // when
+//  console.log(Inverter.invert(input));
+//  // then
+//  Assert.assertEquals(expected, actual);
+//   }
+
+
+    }
+
+
     // The flow to initilize is
     // In - Line
     // Block
