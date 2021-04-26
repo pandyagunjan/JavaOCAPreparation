@@ -3,6 +3,7 @@ package Mix.Reflection;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 
 class Demo
 {
@@ -16,6 +17,24 @@ class Demo
         Class cls = obj.getClass();
         System.out.println("The name of class is " +
                 cls.getName());
+
+        // The modifier of the class
+        int classModifier = cls.getModifiers();
+        System.out.println("The modifier of the class is : " + classModifier);
+        System.out.println("The modifier is public : " + Modifier.isPublic(classModifier));
+
+        //Interface used by Class
+        Class[] interfaces = cls.getInterfaces();
+        System.out.println("Interfaces implemented " + interfaces.length);
+
+        for(Class eachItem :interfaces)
+        {
+            System.out.println("Interfaces implemented :" + eachItem);
+
+        }
+        //Super class
+        Class classSuper = cls.getSuperclass();
+        System.out.println("Super class name is : " + classSuper.getName());
 
         // Getting the constructor of the class through the
         // object of the class
@@ -73,5 +92,27 @@ class Demo
 
         // invokes the method at runtime
         methodcall3.invoke(obj);
+
+        for(int i=0 ; i<10; i++)
+        {
+            i=i++;
+            System.out.println("Hello World!");
+        }
+
+
+        int count =0;
+        ROW_LOOP : for(int row=1;row<=3;row++)
+        {
+            for(int col=1;col<=2;col++)
+            {
+                if(row*col%2 ==0 ) continue ROW_LOOP;
+                count++;
+
+            }
+
+
+        }
+
+        System.out.println(count);
     }
 }

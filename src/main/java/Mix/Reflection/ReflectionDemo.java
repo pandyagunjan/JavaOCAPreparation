@@ -4,7 +4,7 @@ package Mix.Reflection;
 import java.lang.reflect.*;
 
 
-class ReflectionDemo {
+public class ReflectionDemo implements Runnable{
 
         // creating a private field
         private String s;
@@ -28,4 +28,9 @@ class ReflectionDemo {
         private void method3() {
             System.out.println("Private method invoked");
         }
+
+    @Override
+    public void run() {
+        System.out.println("Nothing to do");
     }
+}
