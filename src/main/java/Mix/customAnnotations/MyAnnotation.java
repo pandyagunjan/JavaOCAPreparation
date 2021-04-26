@@ -1,9 +1,14 @@
 package Mix.customAnnotations;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
-@Target({ElementType.FIELD ,ElementType.TYPE ,ElementType.METHOD,ElementType.CONSTRUCTOR ,ElementType.PARAMETER ,ElementType.LOCAL_VARIABLE})
+//https://www.youtube.com/watch?v=UlhtkjfxUUU
+// To decide on which the annotations would be valid
+//@Target({ElementType.FIELD ,ElementType.TYPE ,ElementType.METHOD,ElementType.CONSTRUCTOR ,ElementType.PARAMETER ,ElementType.LOCAL_VARIABLE})
+
+@Inherited
+@Documented
+@Retention(RetentionPolicy.SOURCE)
 public @interface MyAnnotation {
 
 String name() default "GUNJAN";
